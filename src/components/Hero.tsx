@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export function Hero() {
   return (
-    <section className="w-full py-20 lg:py-32 bg-background">
+    <section id="start" className="w-full py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl tracking-tight">

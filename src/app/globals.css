@@ -41,6 +41,32 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Brand colors - główne kolory */
+  --brand-tajemnica: #00505C;
+  --brand-blask: #AE7D5B;
+  --brand-swiatlo: #EDEBC4;
+  
+  /* Pełna paleta kolorów brandowych */
+  --brand-navy-dark: #003145;
+  --brand-teal-dark: #00505C;
+  --brand-blue: #005178;
+  --brand-green: #008C56;
+  --brand-blue-light: #90C6E0;
+  --brand-brown-red: #AC605E;
+  --brand-brown: #AE7D5B;
+  --brand-blue-pale: #B9D2DB;
+  --brand-beige: #D3C6B5;
+  --brand-beige-light: #E4E2BF;
+  --brand-coral: #E55B41;
+  --brand-gray: #E6E6E6;
+  --brand-cream: #EDEBC4;
+  --brand-yellow: #F6C674;
+  --brand-orange: #FFB770;
+  --brand-cream-light: #FFF0D4;
+  --brand-olive: #A87A31;
+  --brand-orange-light: #F4B15D;
+  --brand-green-light: #82BF7E;
 }
 
 .dark {
@@ -119,8 +145,32 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Brand colors - główne kolory */
+  --color-brand-tajemnica: var(--brand-tajemnica);
+  --color-brand-blask: var(--brand-blask);
+  --color-brand-swiatlo: var(--brand-swiatlo);
+  
+  /* Pełna paleta kolorów brandowych */
+  --color-brand-navy-dark: var(--brand-navy-dark);
+  --color-brand-teal-dark: var(--brand-teal-dark);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-green: var(--brand-green);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-brown-red: var(--brand-brown-red);
+  --color-brand-brown: var(--brand-brown);
+  --color-brand-blue-pale: var(--brand-blue-pale);
+  --color-brand-beige: var(--brand-beige);
+  --color-brand-beige-light: var(--brand-beige-light);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-cream-light: var(--brand-cream-light);
+  --color-brand-olive: var(--brand-olive);
+  --color-brand-orange-light: var(--brand-orange-light);
+  --color-brand-green-light: var(--brand-green-light);
 }
 
 @layer base {
@@ -133,6 +183,9 @@
   }
 }
 
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
     h1 {
@@ -187,4 +240,5 @@
 
 html {
   font-size: var(--font-size);
+  scroll-behavior: smooth;
 }

@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Content } from "@/components/Content";
+import { AboutCongress } from "@/components/AboutCongress";
+import { RegistrationInfo } from "@/components/RegistrationInfo";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -8,10 +9,19 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Content />
+        <section id="start">
+          <Hero />
+        </section>
+        <section id="o-kongresie">
+          <AboutCongress />
+        </section>
+        <section id="rejestracja">
+          <RegistrationInfo />
+        </section>
       </main>
-      <Footer />
+      <footer id="kontakt">
+        <Footer />
+      </footer>
     </div>
   );
 }
