@@ -40,24 +40,7 @@ export function RegistrationInfo() {
               </p>
             </div>
           </div>
-          
-          <div className="mt-12 grid sm:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-2xl mb-2">📅</div>
-              <h4 className="mb-1">Wkrótce</h4>
-              <p className="text-sm text-muted-foreground">Program kongresu</p>
-            </div>
-            <div>
-              <div className="text-2xl mb-2">🎫</div>
-              <h4 className="mb-1">Styczeń 2025</h4>
-              <p className="text-sm text-muted-foreground">Otwarcie zapisów</p>
-            </div>
-            <div>
-              <div className="text-2xl mb-2">🎯</div>
-              <h4 className="mb-1">Luty 2025</h4>
-              <p className="text-sm text-muted-foreground">Early bird ceny</p>
-            </div>
-          </div>
+        
         </div>
       </div>
     </section>
