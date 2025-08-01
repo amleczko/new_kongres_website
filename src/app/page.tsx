@@ -15,7 +15,7 @@ export default function Home() {
         <section id="o-kongresie">
           <AboutCongress />
         </section>
-        <section id="rejestracja">
+        <section id="zapisy">
           <RegistrationInfo />
         </section>
       </main>

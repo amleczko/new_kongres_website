@@ -3,6 +3,13 @@
 import { Button } from "./ui/button";
 import { Logo } from "./Logo";
 import { LanguageSelector } from "./LanguageSelector";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 export function Header() {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -28,35 +35,41 @@ export function Header() {
           <Logo />
 
           {/* Navigation menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#start" 
-              onClick={(e) => handleSmoothScroll(e, 'start')}
-              className="text-foreground hover:text-primary transition-colors cursor-pointer"
-            >
-              Start
-            </a>
+          <nav className="hidden md:flex items-center space-x-2">
             <a 
               href="#o-kongresie" 
               onClick={(e) => handleSmoothScroll(e, 'o-kongresie')}
-              className="text-foreground hover:text-primary transition-colors cursor-pointer"
+              className="text-foreground hover:text-primary hover:bg-accent/50 transition-colors cursor-pointer px-3 py-2 rounded-md"
             >
               O kongresie
             </a>
             <a 
-              href="#rejestracja" 
-              onClick={(e) => handleSmoothScroll(e, 'rejestracja')}
-              className="text-foreground hover:text-primary transition-colors cursor-pointer"
+              href="#zapisy" 
+              onClick={(e) => handleSmoothScroll(e, 'zapisy')}
+              className="text-foreground hover:text-primary hover:bg-accent/50 transition-colors cursor-pointer px-3 py-2 rounded-md"
             >
-              Rejestracja
+              Zapisy
             </a>
-            <a 
-              href="#kontakt" 
-              onClick={(e) => handleSmoothScroll(e, 'kontakt')}
-              className="text-foreground hover:text-primary transition-colors cursor-pointer"
-            >
-              Kontakt
-            </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary hover:bg-accent/50 transition-colors cursor-pointer bg-transparent border-none px-3 py-2 h-auto font-normal outline-none focus:outline-none focus:ring-0 rounded-md">
+                Poprzednie edycje
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem 
+                  onClick={(e) => e.preventDefault()}
+                  className="cursor-pointer"
+                >
+                  rok 2024
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={(e) => e.preventDefault()}
+                  className="cursor-pointer"
+                >
+                  rok 2025
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <div className="ml-4">
               <LanguageSelector />
             </div>

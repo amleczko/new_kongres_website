@@ -16,9 +16,7 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="px-8 py-3">
-              Rozpocznij
-            </Button>
+
             <Button variant="outline" size="lg" className="px-8 py-3">
               Dowiedz się więcej
             </Button>
