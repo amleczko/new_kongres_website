@@ -1,14 +1,14 @@
+"use client";
+
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { ArrowLeft, Calendar, MapPin, Play, Music, Camera, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowLeft, Calendar, MapPin, Play, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "./ui/dialog";
 import { useLanguage } from "../contexts/LanguageContext";
 
 interface YouTubePlayerProps {
@@ -139,7 +139,7 @@ export function Congress2025() {
               {/* Back Button */}
               <div className="mb-8">
                 <Link
-                  to="/"
+                  href="/"
                   className="inline-flex items-center text-white/80 hover:text-white transition-colors duration-200"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />

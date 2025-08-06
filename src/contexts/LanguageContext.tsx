@@ -25,7 +25,7 @@ export interface DayProgram {
 
 export interface LanguageContextType {
   currentLanguage: Language;
-  t: (key: string, params?: Record<string, any>) => string;
+  t: (key: string, params?: Record<string, unknown>) => string;
   getSpeakers2024: () => Speaker[];
   getSpeakers2025: () => Speaker[];
   getDailyProgram2024: () => DayProgram[];
@@ -48,7 +48,7 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children, language }: LanguageProviderProps) {
-  const t = (key: string, params?: Record<string, any>): string => {
+  const t = (key: string, params?: Record<string, unknown>): string => {
     let text = translations[language]?.[key] || translations['pl'][key] || key;
 
     // Simple parameter substitution

@@ -97,7 +97,7 @@ export function Footer() {
         </div>
         
         {/* Bottom section */}
-        <div className="mt-12 pt-8 border-t text-center text-brand-gray">
+        <div className="mt-12 pt-8 text-center text-brand-gray">
           <p>&copy; {t('footer.organizer-name')} {new Date().getFullYear()}</p>
         </div>
       </div>

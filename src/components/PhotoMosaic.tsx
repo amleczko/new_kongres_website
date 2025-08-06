@@ -318,7 +318,7 @@ export function PhotoMosaic() {
           <div className="sr-only">
             <div id="lightbox-title">{selectedPhoto.alt}</div>
             <div id="lightbox-description">
-              Powiększone zdjęcie z poprzednich edycji III Międzynarodowego Kongresu "Odkryj małżeństwo". 
+              Powiększone zdjęcie z poprzednich edycji III Międzynarodowego Kongresu &quot;Odkryj małżeństwo&quot;. 
               Naciśnij Escape lub kliknij aby zamknąć.
             </div>
           </div>
