@@ -1,6 +1,8 @@
 import { Logo } from "./Logo";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="w-full border-t bg-brand-tajemnica">
       <div className="container mx-auto px-6 py-12">
@@ -12,10 +14,10 @@ export function Footer() {
             </div>
             
             <div className="mb-6">
-              <h4 className="mb-3 text-brand-gray">Organizator</h4>
+              <h4 className="mb-3 text-brand-gray">{t('footer.organizer')}</h4>
               <div className="text-brand-gray">
                 <p>
-                  Fundacja Misterogrande<br />
+                  {t('footer.organizer-name')}<br />
                   ul. Pocztowa 9<br />
                   62-200 Gniezno
                 </p>
@@ -67,7 +69,7 @@ export function Footer() {
           {/* Second column - Congress secretariat */}
           <div>
             <div className="mb-6">
-              <h4 className="mb-4 text-brand-gray">Sekretariat Kongresu</h4>
+              <h4 className="mb-4 text-brand-gray">{t('footer.secretariat')}</h4>
               <div className="space-y-3">
                 <div>
                   <p className="text-sm">
@@ -83,9 +85,9 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="mb-3 text-brand-gray">Akredytacje dla mediów</h4>
+              <h4 className="mb-3 text-brand-gray">{t('footer.media-accreditation')}</h4>
               <p className="text-sm text-brand-gray mb-2">
-                Media i dziennikarzy, którzy chcieliby otrzymać akredytację na Kongres prosimy o kontakt mailowy{" "}
+                {t('footer.media-text')}{" "}
                 <a href="mailto:media@misterogrande.pl" className="text-brand-yellow hover:text-brand-yellow transition-colors">
                   media@misterogrande.pl
                 </a>.
@@ -96,7 +98,7 @@ export function Footer() {
         
         {/* Bottom section */}
         <div className="mt-12 pt-8 border-t text-center text-brand-gray">
-          <p>&copy; Fundacja Misterogrande {new Date().getFullYear()}</p>
+          <p>&copy; {t('footer.organizer-name')} {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

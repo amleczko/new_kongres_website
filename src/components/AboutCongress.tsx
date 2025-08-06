@@ -1,74 +1,163 @@
+"use client";
+
+import { PhotoMosaic } from "./PhotoMosaic";
+import Link from "next/link";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useLanguage } from "../contexts/LanguageContext";
+
 export function AboutCongress() {
+  const { t, currentLanguage } = useLanguage();
   return (
     <section className="w-full py-16 lg:py-24 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              O kongresie
+            <h2
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              style={{
+                fontFamily: "p22-mackinac-pro, serif",
+              }}
+            >
+              {t('about.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Poznaj szczegóły tego wyjątkowego wydarzenia, które zmieni Twoje spojrzenie na branżę
+              {t('about.subtitle')}
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="mb-6">Czego możesz się spodziewać?</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Photo Mosaic - Full Width */}
+      <div className="mb-16">
+        <PhotoMosaic />
+      </div>
+
+      {/* Previous Editions - show for all languages */}
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h3
+              className="mb-4 text-2xl md:text-3xl"
+              style={{
+                fontFamily: "p22-mackinac-pro, serif",
+              }}
+            >
+              {t('nav.previous-editions')}
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {t('about.previous-subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Edition 2024 */}
+            <div className="group">
+              <div className="bg-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="aspect-video relative overflow-hidden">
+                  <ImageWithFallback
+                    src="https://photo.misterogrande.pl/unsafe/rs:fit:800:450/plain/local:///2024/662.jpg@jpg"
+                    alt="Kongres małżeński 2024 - sala konferencyjna"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-brand-tajemnica/80"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <div className="text-4xl md:text-5xl font-light mb-2" style={{ fontFamily: 'p22-mackinac-pro, serif' }}>
+                        2024
+                      </div>
+                      <div className="text-lg opacity-90">
+                        {t('about.2024-edition')}
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground">
-                    Inspirujące wykłady od uznanych ekspertów z branży
-                  </p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Warsztaty praktyczne z najnowszymi technologiami
+                <div className="p-6">
+                  <h4
+                    className="text-xl mb-3"
+                    style={{
+                      fontFamily: "p22-mackinac-pro, serif",
+                    }}
+                  >
+                    {t('about.2024-title')}
+                  </h4>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {t('about.2024-description')}
                   </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Networking z profesjonalistami z całego kraju
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Prezentacje najnowszych trendów i rozwiązań
-                  </p>
+                  <Link
+                    href={currentLanguage === 'pl' ? '/2024' : `/${currentLanguage}/2024`}
+                    className="inline-flex items-center text-brand-yellow hover:text-brand-yellow transition-colors duration-200 group-hover:translate-x-1 transition-transform"
+                  >
+                    {t('about.learn-more')}
+                    <svg
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-background p-8 rounded-lg border">
-              <h3 className="mb-4">Kluczowe informacje</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-sm font-medium text-muted-foreground mb-1">Data</h4>
-                  <p>15-16 marca 2025</p>
+
+            {/* Edition 2025 */}
+            <div className="group">
+              <div className="bg-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="aspect-video relative overflow-hidden">
+                  <ImageWithFallback
+                    src="https://photo.misterogrande.pl/unsafe/rs:fit:800:450/plain/local:///2025/275.jpg@jpg"
+                    alt="Kongres małżeński 2025 - uczestnicy w rozmowie"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-brand-navy-dark/80"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <div className="text-4xl md:text-5xl font-light mb-2">
+                        2025
+                      </div>
+                      <div className="text-lg opacity-90">
+                        {t('about.2025-edition')}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-sm font-medium text-muted-foreground mb-1">Miejsce</h4>
-                  <p>Centrum Konferencyjne, Warszawa</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-muted-foreground mb-1">Uczestnicy</h4>
-                  <p>Do 500 osób</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-muted-foreground mb-1">Format</h4>
-                  <p>Hybrydowy (stacjonarnie + online)</p>
+                <div className="p-6">
+                  <h4
+                    className="text-xl mb-3"
+                    style={{
+                      fontFamily: "p22-mackinac-pro, serif",
+                    }}
+                  >
+                    {t('about.2025-title')}
+                  </h4>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {t('about.2025-description')}
+                  </p>
+                  <Link
+                    href={currentLanguage === 'pl' ? '/2025' : `/${currentLanguage}/2025`}
+                    className="inline-flex items-center text-brand-yellow hover:text-brand-yellow transition-colors duration-200 group-hover:translate-x-1 transition-transform"
+                  >
+                    {t('about.learn-more')}
+                    <svg
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@import url("https://use.typekit.net/irt6ttx.css");
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -179,6 +182,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
   }
 }
 
@@ -240,4 +244,196 @@
 html {
   font-size: var(--font-size);
   scroll-behavior: smooth;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 600s linear infinite;
+  will-change: transform;
+}
+
+.paused-scroll {
+  animation: scroll 600s linear infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 600s linear infinite;
+  will-change: transform;
+}
+
+.paused-scroll-reverse {
+  animation: scroll-reverse 600s linear infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+/* Fullscreen video dialog styles */
+.video-lightbox-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+  z-index: 50 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.video-lightbox-content {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+  z-index: 51 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  translate: none !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Override DialogContent styles specifically for video lightbox */
+[data-slot="dialog-content"].video-lightbox-content,
+[data-radix-dialog-content].video-lightbox-content {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+  z-index: 51 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  translate: none !important;
+  max-width: none !important;
+  max-height: none !important;
+  box-shadow: none !important;
+  gap: 0 !important;
+}
+
+/* Video container wrapper for better centering */
+.video-lightbox-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+}
+
+/* Video iframe with perfect centering */
+.video-lightbox-iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 90vw !important;
+  height: calc(90vw * 9 / 16) !important;
+  max-width: 1400px !important;
+  max-height: calc(100vh - 100px) !important;
+  border: none !important;
+  z-index: 51 !important;
+}
+
+/* Ensure video respects aspect ratio on smaller screens */
+@media (max-height: 600px) {
+  .video-lightbox-iframe {
+    height: calc(100vh - 100px) !important;
+    width: calc((100vh - 100px) * 16 / 9) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* Close button positioning */
+.video-lightbox-close {
+  position: absolute !important;
+  top: 1.5rem !important;
+  right: 1.5rem !important;
+  z-index: 52 !important;
+  color: white !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50% !important;
+  padding: 0.5rem !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.video-lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #e5e7eb !important;
+}
+
+/* Hero video container with proper overflow */
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-video-container iframe {
+  transition: opacity 2s ease-in-out;
+  /* Ensure video covers entire container without black bars */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+/* Mobile optimization - disable video on small screens for performance */
+@media (max-width: 768px) {
+  .hero-video-container {
+    display: none;
+  }
 }

@@ -1,25 +1,27 @@
+import { useLanguage } from "../contexts/LanguageContext";
+
 export function RegistrationInfo() {
+  const { t } = useLanguage();
   return (
     <section id="rejestracja" className="w-full py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8">
-            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h2 className="mb-4 text-3xl md:text-4xl lg:text-5xl">
-              Zapisy i szczegóły wkrótce
+            <h2 
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+              style={{ 
+                fontFamily: "p22-mackinac-pro, serif"
+              }}
+            >
+              {t('registration.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Pracujemy nad finalizacją wszystkich szczegółów kongresu. 
-              Zapisy ruszą już wkrótce - zostaw swój email, aby być pierwszym, który otrzyma informacje.
+              {t('registration.description')}
             </p>
           </div>
           
-          <div className="bg-muted/30 p-8 rounded-lg border max-w-md mx-auto">
-            <h3 className="mb-4">Bądź na bieżąco</h3>
+          <div className="bg-muted/30 p-8 rounded-lg border">
+          
             <p className="text-sm text-muted-foreground mb-6">
               Zostaw swój adres email, aby otrzymać powiadomienie o otwarciu zapisów i poznać wszystkie szczegóły programu.
             </p>
