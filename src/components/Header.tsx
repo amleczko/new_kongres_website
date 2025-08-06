@@ -46,10 +46,17 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
   const currentLanguage = getCurrentLanguage();
 
   const [scrollY, setScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(isSubpage); // Start scrolled if on subpage
+  const [isScrolled, setIsScrolled] = useState(false); // Always start transparent on load
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Set initial state - subpages should have white header immediately
+    if (isSubpage) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrollY(currentScrollY);
@@ -121,7 +128,7 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
       }}
     >
       
-      <div className="container mx-auto px-6 py-4 relative z-10">
+      <div className="container mx-auto px-6 py-4 relative z-10" style={{ backgroundColor: 'transparent' }}>
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button 

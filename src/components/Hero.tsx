@@ -32,13 +32,13 @@ export function Hero() {
     const iframe = document.createElement('iframe');
     iframe.src = 'https://player.vimeo.com/video/1107472316?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&h=d920a1c998';
     iframe.style.position = 'absolute';
-    iframe.style.top = '50%';
+    iframe.style.top = '0';
     iframe.style.left = '50%';
     iframe.style.width = '100vw';
     iframe.style.height = '56.25vw'; // 16:9 aspect ratio
     iframe.style.minHeight = '100vh';
     iframe.style.minWidth = '177.78vh'; // 16:9 aspect ratio
-    iframe.style.transform = 'translate(-50%, -50%)';
+    iframe.style.transform = 'translateX(-50%)';
     iframe.style.border = 'none';
     iframe.style.opacity = '0';
     iframe.style.transition = 'opacity 2s ease-in-out';
@@ -93,7 +93,7 @@ export function Hero() {
   return (
     <>
       {/* Hero section - EXACT 100VH HEIGHT */}
-      <section className="relative h-screen flex items-center justify-center" style={{ marginTop: '-80px', paddingTop: '80px' }}>
+      <section className="relative flex items-center justify-center" style={{ height: 'calc(100vh + 80px)', marginTop: '-80px', paddingTop: '80px' }}>
         
         {/* Background Image - FILLS ENTIRE SECTION */}
         <div
