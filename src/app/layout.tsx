@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TypekitLoader } from "@/components/TypekitLoader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className="antialiased">
+        <TypekitLoader />
         {children}
       </body>
     </html>

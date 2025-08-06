@@ -38,8 +38,8 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
   
   // Get current language from path
   const getCurrentLanguage = (): Language => {
-    if (location.pathname.startsWith('/en')) return 'en';
-    if (location.pathname.startsWith('/it')) return 'it';
+    if (pathname.startsWith('/en')) return 'en';
+    if (pathname.startsWith('/it')) return 'it';
     return 'pl';
   };
   

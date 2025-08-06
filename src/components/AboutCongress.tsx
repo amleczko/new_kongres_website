@@ -118,7 +118,7 @@ export function AboutCongress() {
                   <div className="absolute inset-0 bg-brand-navy-dark/80"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
-                      <div className="text-4xl md:text-5xl font-light mb-2">
+                      <div className="text-4xl md:text-5xl font-light mb-2" style={{ fontFamily: 'p22-mackinac-pro, serif' }}>
                         2025
                       </div>
                       <div className="text-lg opacity-90">
