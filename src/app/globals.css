@@ -294,12 +294,12 @@ html {
 }
 
 .animate-scroll {
-  animation: scroll 600s linear infinite;
+  animation: scroll 100s linear infinite;
   will-change: transform;
 }
 
 .paused-scroll {
-  animation: scroll 600s linear infinite;
+  animation: scroll 100s linear infinite;
   animation-play-state: paused;
   will-change: transform;
 }
@@ -314,12 +314,12 @@ html {
 }
 
 .animate-scroll-reverse {
-  animation: scroll-reverse 600s linear infinite;
+  animation: scroll-reverse 100s linear infinite;
   will-change: transform;
 }
 
 .paused-scroll-reverse {
-  animation: scroll-reverse 600s linear infinite;
+  animation: scroll-reverse 100s linear infinite;
   animation-play-state: paused;
   will-change: transform;
 }

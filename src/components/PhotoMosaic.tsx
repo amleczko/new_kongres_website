@@ -12,11 +12,12 @@ interface Photo {
 }
 
 const PHOTO_SIZE = 250;
-const PHOTOS_PER_ROW = 50; // Liczba zdjęć w podstawowym segmencie
-const PRELOAD_BUFFER = 10; // Bufor zdjęć do załadowania przed/po widocznych
-const BATCH_SIZE = 10; // Większy batch - rzadsze ale większe aktualizacje
+const PHOTOS_PER_ROW = 12; // JESZCZE BARDZIEJ ZMNIEJSZONE: 20 → 12
+const PRELOAD_BUFFER = 3; // JESZCZE BARDZIEJ ZMNIEJSZONE: 5 → 3  
+const BATCH_SIZE = 3; // JESZCZE BARDZIEJ ZMNIEJSZONE: 5 → 3
+const MAX_PHOTOS = 24; // DRASTYCZNIE ZMNIEJSZONE: 60 → 24 (2 rzędy po 12)
 
-// Funkcja do generowania losowej kolejności zdjęć od 1 do 500
+// Funkcja do generowania losowej kolejności zdjęć - TYLKO 60 zdjęć
 function shuffleArray(array: number[]): number[] {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -26,9 +27,9 @@ function shuffleArray(array: number[]): number[] {
   return shuffled;
 }
 
-// Generowanie losowej sekwencji zdjęć dla danego roku
+// Generowanie losowej sekwencji zdjęć dla danego roku - OGRANICZONE DO 60
 function generatePhotoSequence(year: number): number[] {
-  const numbers = Array.from({ length: 500 }, (_, i) => i + 1);
+  const numbers = Array.from({ length: MAX_PHOTOS }, (_, i) => i + 1);
   return shuffleArray(numbers);
 }
 
@@ -50,6 +51,9 @@ export function PhotoMosaic() {
   const [topRowPhotos, setTopRowPhotos] = useState<Photo[]>([]);
   const [bottomRowPhotos, setBottomRowPhotos] = useState<Photo[]>([]);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [isVisible, setIsVisible] = useState(false); // NOWE: śledzenie widoczności
+  
+  const containerRef = useRef<HTMLDivElement>(null); // NOWE: ref do kontenera
   
   const topRowSequenceRef = useRef<number[]>([]);
   const bottomRowSequenceRef = useRef<number[]>([]);
@@ -61,24 +65,45 @@ export function PhotoMosaic() {
   const animationStartTimeRef = useRef<number>(Date.now());
   const ANIMATION_DURATION = 600; // 600 sekund jak w CSS
 
-  // Funkcja do generowania segmentu zdjęć
+  // Funkcja do generowania segmentu zdjęć - NAPRAWIONO: używa MAX_PHOTOS zamiast 500
   const generatePhotoSegment = (year: number, sequence: number[], startIndex: number, count: number): Photo[] => {
     const photos: Photo[] = [];
     for (let i = 0; i < count; i++) {
-      const seqIndex = (startIndex + i) % 500;
+      const seqIndex = (startIndex + i) % MAX_PHOTOS;
       const photoNumber = sequence[seqIndex];
       photos.push(createPhoto(photoNumber, year));
     }
     return photos;
   };
 
-  // Inicjalizacja losowych sekwencji zdjęć
+  // NOWE: IntersectionObserver do lazy loading całego komponentu
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Przestań obserwować po pierwszym wyświetleniu
+        }
+      },
+      { threshold: 0.1 } // Ładuj gdy 10% komponentu jest widoczne
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Inicjalizacja losowych sekwencji zdjęć - TYLKO gdy komponent jest widoczny
+  useEffect(() => {
+    if (!isVisible) return; // NOWE: nie ładuj jeśli nie jest widoczny
+    
     topRowSequenceRef.current = generatePhotoSequence(2024);
     bottomRowSequenceRef.current = generatePhotoSequence(2025);
     
-    // Generuj większą pulę zdjęć - wystarczająco dużo aby pokryć cały cykl
-    const TOTAL_PHOTOS = PHOTOS_PER_ROW * 4; // 4 pełne segmenty
+    // Generuj mniejszą pulę zdjęć dla wydajności
+    const TOTAL_PHOTOS = PHOTOS_PER_ROW * 2; // ZMNIEJSZONE z 4 na 2
     
     const topPhotos = generatePhotoSegment(2024, topRowSequenceRef.current, 0, TOTAL_PHOTOS);
     const bottomPhotos = generatePhotoSegment(2025, bottomRowSequenceRef.current, 0, TOTAL_PHOTOS);
@@ -89,7 +114,7 @@ export function PhotoMosaic() {
     topRowIndexRef.current = TOTAL_PHOTOS;
     bottomRowIndexRef.current = TOTAL_PHOTOS;
     animationStartTimeRef.current = Date.now();
-  }, []);
+  }, [isVisible]); // ZMIENIONO: dependency na isVisible
 
   // Funkcja do ostrożnej rotacji zdjęć - tylko dodaje na końcu gdy potrzeba
   const rotatePhotos = useCallback(() => {
@@ -292,14 +317,24 @@ export function PhotoMosaic() {
   return (
     <>
       {/* Photo Mosaic - Two Rows 500px Total Height */}
-      <div className="w-full overflow-hidden">
+      <div ref={containerRef} className="w-full overflow-hidden">
         <div className="relative h-[500px] overflow-hidden flex flex-col">
           
-          {/* Top Row - Moving Right (2024) */}
-          {renderPhotoRow(topRowPhotos, true)}
-          
-          {/* Bottom Row - Moving Left (2025) */}
-          {renderPhotoRow(bottomRowPhotos, false)}
+          {/* Render photos only when visible */}
+          {isVisible ? (
+            <>
+              {/* Top Row - Moving Right (2024) */}
+              {renderPhotoRow(topRowPhotos, true)}
+              
+              {/* Bottom Row - Moving Left (2025) */}
+              {renderPhotoRow(bottomRowPhotos, false)}
+            </>
+          ) : (
+            /* Placeholder while not visible */
+            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+              <div className="text-gray-400">Loading photos...</div>
+            </div>
+          )}
           
         </div>
       </div>
