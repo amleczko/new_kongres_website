@@ -8,7 +8,6 @@ export function Hero() {
   const { t } = useLanguage();
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
-  const [isVideoReady, setIsVideoReady] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   useEffect(() => {
@@ -48,7 +47,6 @@ export function Hero() {
     // Wait for video to be ready before showing
     iframe.onload = () => {
       setTimeout(() => {
-        setIsVideoReady(true);
         iframe.style.opacity = '1';
         // Delay showing video overlay to ensure smooth transition
         setTimeout(() => {
@@ -158,7 +156,7 @@ export function Hero() {
           </button>
           
           <iframe
-            src="https://www.youtube.com/embed/9LB5o7N3OMc?autoplay=1&rel=0&modestbranding=1"
+            src={`https://www.youtube.com/embed/${t('hero.video-id')}?autoplay=1&rel=0&modestbranding=1`}
             className="w-[90vw] h-[50.625vw] max-w-[1400px] max-h-[calc(100vh-100px)]"
             style={{ aspectRatio: '16/9' }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

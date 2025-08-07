@@ -13,8 +13,6 @@ interface Photo {
 
 const PHOTO_SIZE = 250;
 const PHOTOS_PER_ROW = 12; // JESZCZE BARDZIEJ ZMNIEJSZONE: 20 → 12
-const PRELOAD_BUFFER = 3; // JESZCZE BARDZIEJ ZMNIEJSZONE: 5 → 3  
-const BATCH_SIZE = 3; // JESZCZE BARDZIEJ ZMNIEJSZONE: 5 → 3
 const MAX_PHOTOS = 24; // DRASTYCZNIE ZMNIEJSZONE: 60 → 24 (2 rzędy po 12)
 
 // Funkcja do generowania losowej kolejności zdjęć - TYLKO 60 zdjęć
@@ -28,7 +26,7 @@ function shuffleArray(array: number[]): number[] {
 }
 
 // Generowanie losowej sekwencji zdjęć dla danego roku - OGRANICZONE DO 60
-function generatePhotoSequence(year: number): number[] {
+function generatePhotoSequence(): number[] {
   const numbers = Array.from({ length: MAX_PHOTOS }, (_, i) => i + 1);
   return shuffleArray(numbers);
 }
@@ -63,7 +61,6 @@ export function PhotoMosaic() {
   
   // Referencje do śledzenia pozycji w cyklu animacji
   const animationStartTimeRef = useRef<number>(Date.now());
-  const ANIMATION_DURATION = 600; // 600 sekund jak w CSS
 
   // Funkcja do generowania segmentu zdjęć - NAPRAWIONO: używa MAX_PHOTOS zamiast 500
   const generatePhotoSegment = (year: number, sequence: number[], startIndex: number, count: number): Photo[] => {
@@ -99,8 +96,8 @@ export function PhotoMosaic() {
   useEffect(() => {
     if (!isVisible) return; // NOWE: nie ładuj jeśli nie jest widoczny
     
-    topRowSequenceRef.current = generatePhotoSequence(2024);
-    bottomRowSequenceRef.current = generatePhotoSequence(2025);
+    topRowSequenceRef.current = generatePhotoSequence();
+    bottomRowSequenceRef.current = generatePhotoSequence();
     
     // Generuj mniejszą pulę zdjęć dla wydajności
     const TOTAL_PHOTOS = PHOTOS_PER_ROW * 2; // ZMNIEJSZONE z 4 na 2
@@ -123,7 +120,6 @@ export function PhotoMosaic() {
     setTopRowPhotos(currentTop => {
       const currentLength = currentTop.length;
       const OPTIMAL_LENGTH = PHOTOS_PER_ROW * 4; // Optymalny rozmiar
-      const MIN_LENGTH = PHOTOS_PER_ROW * 3; // Minimum
       
       // Dodaj zdjęcia tylko jeśli lista zrobiła się za krótka
       if (currentLength < OPTIMAL_LENGTH) {
@@ -131,7 +127,7 @@ export function PhotoMosaic() {
         const photosToAdd = OPTIMAL_LENGTH - currentLength;
         
         for (let i = 0; i < photosToAdd; i++) {
-          const nextTopNumber = topRowSequenceRef.current[topRowIndexRef.current % 500];
+          const nextTopNumber = topRowSequenceRef.current[topRowIndexRef.current % MAX_PHOTOS];
           const newTopPhoto = createPhoto(nextTopNumber, 2024);
           newTop.push(newTopPhoto);
           topRowIndexRef.current++;
@@ -146,7 +142,6 @@ export function PhotoMosaic() {
     setBottomRowPhotos(currentBottom => {
       const currentLength = currentBottom.length;
       const OPTIMAL_LENGTH = PHOTOS_PER_ROW * 4;
-      const MIN_LENGTH = PHOTOS_PER_ROW * 3;
       
       // Dodaj zdjęcia tylko jeśli lista zrobiła się za krótka
       if (currentLength < OPTIMAL_LENGTH) {
@@ -154,7 +149,7 @@ export function PhotoMosaic() {
         const photosToAdd = OPTIMAL_LENGTH - currentLength;
         
         for (let i = 0; i < photosToAdd; i++) {
-          const nextBottomNumber = bottomRowSequenceRef.current[bottomRowIndexRef.current % 500];
+          const nextBottomNumber = bottomRowSequenceRef.current[bottomRowIndexRef.current % MAX_PHOTOS];
           const newBottomPhoto = createPhoto(nextBottomNumber, 2025);
           newBottom.push(newBottomPhoto);
           bottomRowIndexRef.current++;

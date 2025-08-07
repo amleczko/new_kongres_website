@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -65,9 +66,11 @@ function YouTubePlayer({ videoId, title }: YouTubePlayerProps) {
         className="relative cursor-pointer group rounded-lg overflow-hidden"
         onClick={() => setIsOpen(true)}
       >
-        <img 
+        <Image 
           src={thumbnailUrl} 
           alt={title}
+          width={400}
+          height={200}
           className="w-full h-48 object-cover"
         />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">

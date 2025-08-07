@@ -45,7 +45,6 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
   
   const currentLanguage = getCurrentLanguage();
 
-  const [scrollY, setScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false); // Always start transparent on load
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -59,7 +58,6 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
       setIsScrolled(currentScrollY > 50); // Start transition after 50px scroll
     };
 
@@ -84,29 +82,7 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
     }
   };
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    
-    // Close mobile menu if open
-    setIsMobileMenuOpen(false);
-    
-    // If we're on a subpage, navigate to home page with hash in current language
-    if (isSubpage) {
-      const homePath = currentLanguage === 'pl' ? '/' : `/${currentLanguage}`;
-      router.push(`${homePath}#${targetId}`);
-      return;
-    }
-    
-    // Otherwise, smooth scroll to section on current page
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const offsetTop = targetElement.offsetTop - 80; // Account for header height
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
+  // Function removed as it's not used in current implementation
 
   const handleMobileNavClick = (path: string) => {
     setIsMobileMenuOpen(false);

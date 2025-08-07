@@ -49,7 +49,9 @@ interface LanguageProviderProps {
 
 export function LanguageProvider({ children, language }: LanguageProviderProps) {
   const t = (key: string, params?: Record<string, unknown>): string => {
-    let text = translations[language]?.[key] || translations['pl'][key] || key;
+    const langTranslations = translations[language] as Record<string, string>;
+    const fallbackTranslations = translations['pl'] as Record<string, string>;
+    let text = langTranslations?.[key] || fallbackTranslations[key] || key;
 
     // Simple parameter substitution
     if (params) {
@@ -110,6 +112,7 @@ const translations = {
     'hero.description': '1-3 maja 2026, Gniezno. Razem odkrywamy piękno sakramentu małżeństwa: konferencje, świadectwa, modlitwa',
     'hero.description-break': 'a między nimi przerwy na rozmowę przy dobrej kawie.',
     'hero.watch-video': 'Zobacz film',
+    'hero.video-id': '9LB5o7N3OMc',
 
     // About Congress
     'about.title': 'O Kongresie',
@@ -136,6 +139,17 @@ const translations = {
     'registration.website': 'Strona internetowa',
     'registration.facebook': 'Facebook',
     'registration.instagram': 'Instagram',
+    
+    // Newsletter
+    'newsletter.description': 'Zostaw swój adres email, aby otrzymać powiadomienie o otwarciu zapisów i poznać wszystkie szczegóły programu.',
+    'newsletter.email-placeholder': 'Twój adres email',
+    'newsletter.submit': 'Zapisz się',
+    'newsletter.submitting': 'Zapisuję...',
+    'newsletter.success': 'Dziękujemy! Email został zapisany.',
+    'newsletter.error-empty': 'Proszę podać adres email',
+    'newsletter.error-generic': 'Wystąpił błąd. Spróbuj ponownie.',
+    'newsletter.error-connection': 'Wystąpił błąd. Sprawdź połączenie internetowe.',
+    'newsletter.privacy': 'Nie wysyłamy spamu. Możesz wypisać się w każdym momencie.',
 
     // Footer
     'footer.organizer': 'Organizator',
@@ -197,6 +211,7 @@ const translations = {
     'hero.description': 'May 1-3, 2026, Gniezno. Discover with us the beauty of the sacrament of marriage, through lectures, testimonies, prayer',
     'hero.description-break': 'and coffee breaks filled with engaging conversations with participants and speakers.',
     'hero.watch-video': 'Watch video',
+    'hero.video-id': 'hDS1RF3sasQ',
 
     // About Congress
     'about.title': 'About the Congress',
@@ -223,6 +238,17 @@ const translations = {
     'registration.website': 'Website',
     'registration.facebook': 'Facebook',
     'registration.instagram': 'Instagram',
+    
+    // Newsletter
+    'newsletter.description': 'Leave your email address to receive notification about registration opening and learn all program details.',
+    'newsletter.email-placeholder': 'Your email address',
+    'newsletter.submit': 'Subscribe',
+    'newsletter.submitting': 'Subscribing...',
+    'newsletter.success': 'Thank you! Email has been saved.',
+    'newsletter.error-empty': 'Please provide an email address',
+    'newsletter.error-generic': 'An error occurred. Please try again.',
+    'newsletter.error-connection': 'An error occurred. Please check your internet connection.',
+    'newsletter.privacy': 'We don\'t send spam. You can unsubscribe at any time.',
 
     // Footer
     'footer.organizer': 'Organizer',
@@ -284,6 +310,7 @@ const translations = {
     'hero.description': '1-3 maggio 2026, Gniezno. Scopri con noi la bellezza del sacramento del matrimonio attraverso conferenze, testimonianze, momenti di preghiera',
     'hero.description-break': 'e pause caffè ricche di conversazioni coinvolgenti con partecipanti e relatori.',
     'hero.watch-video': 'Guarda il video',
+    'hero.video-id': 'fD76rJdtK2g',
 
     // About Congress
     'about.title': 'Il Convegno',
@@ -310,6 +337,17 @@ const translations = {
     'registration.website': 'Sito web',
     'registration.facebook': 'Facebook',
     'registration.instagram': 'Instagram',
+    
+    // Newsletter
+    'newsletter.description': 'Lascia il tuo indirizzo email per ricevere notifiche sull\'apertura delle iscrizioni e conoscere tutti i dettagli del programma.',
+    'newsletter.email-placeholder': 'Il tuo indirizzo email',
+    'newsletter.submit': 'Iscriviti',
+    'newsletter.submitting': 'Iscrizione in corso...',
+    'newsletter.success': 'Grazie! Email salvata con successo.',
+    'newsletter.error-empty': 'Inserisci un indirizzo email',
+    'newsletter.error-generic': 'Si è verificato un errore. Riprova.',
+    'newsletter.error-connection': 'Si è verificato un errore. Verifica la connessione internet.',
+    'newsletter.privacy': 'Non inviamo spam. Puoi cancellarti in qualsiasi momento.',
 
     // Footer
     'footer.organizer': 'Organizzatore',
