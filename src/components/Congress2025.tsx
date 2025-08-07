@@ -116,7 +116,7 @@ function YouTubePlayer({ videoId, title }: YouTubePlayerProps) {
 }
 
 export function Congress2025() {
-  const { t, getSpeakers2025, getDailyProgram2025 } = useLanguage();
+  const { t, getSpeakers2025, getDailyProgram2025, currentLanguage } = useLanguage();
   
   // Scroll to top when component mounts
   useEffect(() => {
@@ -143,7 +143,7 @@ export function Congress2025() {
               {/* Back Button */}
               <div className="mb-8">
                 <Link
-                  href="/"
+                  href={currentLanguage === 'pl' ? '/' : `/${currentLanguage}`}
                   className="inline-flex items-center text-white/80 hover:text-white transition-colors duration-200"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />

@@ -176,7 +176,7 @@ const translations = {
 
     // Congress 2024
     'congress.2024.title': 'I Międzynarodowy Kongres',
-    'congress.2024.subtitle': '„Odkryj małżeństwo”',
+    'congress.2024.subtitle': '„Odkryj małżeństwo” - zachwyć się darem',
     'congress.2024.description': 'Pierwsza edycja Kongresu, która zapoczątkowała cykliczne spotkania małżeństw z całego świata. Niezapomniane doświadczenie i głęboka refleksja nad sakramentem małżeństwa',
     'congress.2024.day1': 'Dzień pierwszy - 1 maja 2024',
     'congress.2024.day2': 'Dzień drugi - 2 maja 2024',
@@ -184,7 +184,7 @@ const translations = {
 
     // Congress 2025
     'congress.2025.title': 'II Międzynarodowy Kongres',
-    'congress.2025.subtitle': 'Odkryj małżeństwo',
+    'congress.2025.subtitle': '„Odkryj małżeństwo" - jako sakrament',
     'congress.2025.description': 'Druga edycja kongresu przyniosła jeszcze więcej inspirujących wykładów i warsztatów dla uczestników z różnych stron świata.',
     'congress.2025.day1': 'Dzień pierwszy - 1 maja 2025',
     'congress.2025.day2': 'Dzień drugi - 2 maja 2025',
@@ -278,7 +278,7 @@ const translations = {
 
     // Congress 2024
     'congress.2024.title': '1st International Congress',
-    'congress.2024.subtitle': '"Discover marriage"',
+    'congress.2024.subtitle': '"Discover marriage" - be amazed by the gift',
     'congress.2024.description': 'The first Congress marked the beginning of a worldwide journey of married couples united in faith — an unforgettable encounter with God and the mystery of marriage.',
     'congress.2024.day1': 'Day one - May 1, 2024',
     'congress.2024.day2': 'Day two - May 2, 2024',
@@ -286,7 +286,7 @@ const translations = {
 
     // Congress 2025
     'congress.2025.title': '2nd International Congress',
-    'congress.2025.subtitle': '"Discover marriage"',
+    'congress.2025.subtitle': '"Discover marriage" - as a sacrament',
     'congress.2025.description': 'The second edition of the congress offered even more inspiring talks and workshops, welcoming participants from across the globe.',
     'congress.2025.day1': 'Day one - May 1, 2025',
     'congress.2025.day2': 'Day two - May 2, 2025',
@@ -380,7 +380,7 @@ const translations = {
 
     // Congress 2024
     'congress.2024.title': '1° Convegno Internazionale ',
-    'congress.2024.subtitle': '"Scopri il Matrimonio"',
+    'congress.2024.subtitle': '"Scopri il Matrimonio" - lasciati affascinare dal dono',
     'congress.2024.description': 'Il primo Convegno ha segnato l’inizio di un cammino mondiale di coppie sposate unite nella fede — un incontro con Dio e con il mistero del matrimonio.',
     'congress.2024.day1': 'Primo giorno - 1 maggio 2024',
     'congress.2024.day2': 'Secondo giorno - 2 maggio 2024',
@@ -388,7 +388,7 @@ const translations = {
 
     // Congress 2025
     'congress.2025.title': '2° Convegno Internazionale',
-    'congress.2025.subtitle': '"Scopri il Matrimonio"',
+    'congress.2025.subtitle': '"Scopri il Matrimonio" - come sacramento',
     'congress.2025.description': 'La seconda edizione del Convegno ha offerto ancora più conferenze e laboratori ricchi di ispirazione, accogliendo partecipanti da tutto il mondo.',
     'congress.2025.day1': 'Primo giorno - 1 maggio 2025',
     'congress.2025.day2': 'Secondo giorno - 2 maggio 2025',
