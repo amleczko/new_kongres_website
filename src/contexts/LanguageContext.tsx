@@ -185,7 +185,7 @@ const translations = {
     // Congress 2024
     'congress.2024.title': 'I Międzynarodowy Kongres',
     'congress.2024.subtitle': '„Odkryj małżeństwo” - zachwyć się darem',
-    'congress.2024.description': 'Pierwsza edycja Kongresu, która zapoczątkowała cykliczne spotkania małżeństw z całego świata. Niezapomniane doświadczenie i głęboka refleksja nad sakramentem małżeństwa',
+    'congress.2024.description': 'Pierwsza edycja Kongresu, która zapoczątkowała cykliczne spotkania małżeństw z całego świata. Niezapomniane doświadczenie i głęboka refleksja nad sakramentem małżeństwa.',
     'congress.2024.day1': 'Dzień pierwszy - 1 maja 2024',
     'congress.2024.day2': 'Dzień drugi - 2 maja 2024',
     'congress.2024.day3': 'Dzień trzeci - 3 maja 2024',
@@ -741,7 +741,7 @@ const getDailyProgram2024ForLanguage = (language: Language, t: (key: string) => 
           {
             title: t('conference.lecture'),
             speaker: "Robert Cheaib",
-            summary: "Miłość małżeńska to miejsce, gdzie spotykają się Słowo i ciało - tajemnica Wcielenia wpisana w codzienność relacji. Ten wykład łączy refleksję biblijną z doświadczeniem życia razem - z jego pięknem, trudami i łaską",
+            summary: "Miłość małżeńska to miejsce, gdzie spotykają się Słowo i ciało - tajemnica Wcielenia wpisana w codzienność relacji. Ten wykład łączy refleksję biblijną z doświadczeniem życia razem - z jego pięknem, trudami i łaską.",
             spotify: "5C0mDHdtesMkUlrURRh8lc",
             youtube: "zibAda2JETg"
           },
@@ -941,7 +941,7 @@ const getDailyProgram2025ForLanguage = (language: Language, t: (key: string) => 
           {
             title: t('conference.testimony'),
             speaker: "Piotr i Iwona Wołkow",
-            summary: "Iwona i Piotr Wołkow podzielili się tym, jak Bóg działa w ich życiu przez sakrament małżeństwa. Od ponad 25 lat są małżeństwem, rodzicami adoptowanych dzieci, Franka i Niny. Doświadczyli wielu wyzwań, zawsze znajdując oparcie w Słowie Bożym.",
+            summary: "Iwona i Piotr Wołkow podzielili się tym, jak Bóg działa w ich życiu przez sakrament małżeństwa. Od ponad 25 lat są małżeństwem, rodzicami adoptowanych dzieci - Franka i Niny. Doświadczyli wielu wyzwań, zawsze znajdując oparcie w Słowie Bożym.",
             spotify: "1FiPJSXi1tnBnQYKq40oY2",
             youtube: "zdYqPvEdqmU"
           }
@@ -966,7 +966,7 @@ const getDailyProgram2025ForLanguage = (language: Language, t: (key: string) => 
           {
             title: t('conference.panel'),
             speaker: "Łukasz i Małgorzata Ferchmin",
-            summary: "Zaproszeni goście zasiedli do wspólnej dyskusji o sakramencie małżeństwa. Konferansjerzy Małgorzata i Łukasz Ferchmin mięli okazję zadać dodatkowe pytania prelegentom, rozszerzając pewne wątki i przekazując również pytania od uczestników.",
+            summary: "Zaproszeni goście zasiedli do wspólnej dyskusji o sakramencie małżeństwa. Konferansjerzy Małgorzata i Łukasz Ferchmin mieli okazję zadać dodatkowe pytania prelegentom, rozszerzając pewne wątki i przekazując również pytania od uczestników.",
             spotify: "6XJkD0I4b6HbHfZr2DIGMd",
             youtube: "3dUykFqcMkk"
           }
