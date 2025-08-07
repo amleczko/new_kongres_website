@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from "../contexts/LanguageContext";
 import { Play, X } from 'lucide-react';
+import { imgproxyHelpers } from "../../lib/imgproxy";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -99,7 +100,7 @@ export function Hero() {
             showVideo ? 'opacity-0' : 'opacity-100'
           }`}
           style={{
-            backgroundImage: `url('https://photo.misterogrande.pl/unsafe/rs:fit:1920:1080/plain/local:///2025/275.jpg@jpg')`,
+            backgroundImage: `url('${imgproxyHelpers.fit(1920, 1080, '2025/275.jpg')}')`,
             zIndex: 1,
           }}
         />

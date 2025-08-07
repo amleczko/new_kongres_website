@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { X } from "lucide-react";
+import { imgproxyHelpers } from "../../lib/imgproxy";
 
 interface Photo {
   id: string;
@@ -37,8 +38,8 @@ function createPhoto(number: number, year: number): Photo {
     id: `${year}-${number}`,
     number,
     year,
-    thumbnailSrc: `https://photo.misterogrande.pl/unsafe/rs:fill:600:600/plain/local:///${year}/${number}.jpg@jpg`,
-    fullSrc: `https://photo.misterogrande.pl/unsafe/rs:fit:1920:1080/plain/local:///${year}/${number}.jpg@jpg`,
+    thumbnailSrc: imgproxyHelpers.fill(600, 600, `${year}/${number}.jpg`),
+    fullSrc: imgproxyHelpers.fit(1920, 1080, `${year}/${number}.jpg`),
     alt: `Kongres małżeński ${year} - zdjęcie ${number}`
   };
 }

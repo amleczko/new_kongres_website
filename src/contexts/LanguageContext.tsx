@@ -1,4 +1,5 @@
 import { createContext, useContext, ReactNode } from 'react';
+import { imgproxyHelpers } from '../../lib/imgproxy';
 
 export type Language = 'pl' | 'en' | 'it';
 
@@ -400,37 +401,37 @@ const getSpeakers2024ForLanguage = (language: Language): Speaker[] => {
         name: "Aleksander i Monika Bańka",
         title: "",
         bio: "Są małżeństwem od dwudziestu lat, mają dwóch synów. Poznali się na rekolekcjach i trwają w ruchu oazowym. Aleksander to filozof i lider wspólnoty Rodzina Świętego Szarbela. Monika jest terapeutką i pracuje z rodzinami oraz parami.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/banka.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/banka.jpg'),
       },
       {
         name: "Łukasz i Agnieszka Czechyra",
         title: "",
         bio: "Poznali się na studiach i od tamtej pory są razem. Mają pięcioro dzieci i prowadzą dla nich edukację domową. Zaangażowani w życie swojej parafii oraz posługę dla małżeństw. Prowadzą dni skupienia oraz dzielą się swoim świadectwem.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/czechyra.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/czechyra.jpg'),
       },
       {
         name: "ks. Renzo Bonetti",
         title: "",
         bio: "Kapłan z Werony, wyświęcony w 1968 roku we Włoszech. Pracował jako rektor seminarium duchownego. Jest współzałożycielem projektu Misterogrande, gdzie głosi piękno tego sakramentu. Wierzy w powołanie do świętości małżonków i ich sakramentalną godność.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/bonetti.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/bonetti.jpg'),
       },
       {
         name: "Robert Cheaib",
         title: "",
         bio: "Mąż, ojciec i profesor teologii dogmatycznej we Francji. Autor książek o wierze, modlitwie i rodzinie. Członek watykańskiej Dykasterii ds. Świeckich i Rodziny. Prowadzi bloga o duchowości w codziennym życiu chrześcijańskim.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/cheaib.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/cheaib.jpg'),
       },
       {
         name: "ks. Przemysław Kwiatkowski",
         title: "",
         bio: "Kapłan archidiecezji gnieźnieńskiej, wieloletni duszpasterz i wykładowca. Były rektor gnieźnieńskiego seminarium duchownego. Od początku związany z projektem Misterogrande w Polsce. Obecnie pełni funkcję konsultora Rady ds. Rodziny.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/kwiatkowski.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/kwiatkowski.jpg'),
       },
       {
         name: "Tommaso Lodi i Giulia Cavicchi",
         title: "",
         bio: "Mieszkają w regionie Emilia-Romagna i są małżeństwem zaangażowanym w ewangelizację. Giulia jest psychologiem, Tommaso kończy studia teologiczne i pracuje jako katecheta. Ich misja zrodziła się na rekolekcjach Misterogrande i w teologii ciała Jana Pawła II.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/lodi.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/lodi.jpg'),
       },
     ],
     en: [
@@ -438,37 +439,37 @@ const getSpeakers2024ForLanguage = (language: Language): Speaker[] => {
         name: "Aleksander and Monika Bańka",
         title: "",
         bio: "They have been married for twenty years and have two sons. They met during a spiritual retreat and remain active members of that community. Aleksander is a philosopher and leader of the Holy Charbel Family community. Monika is a therapist who works with families and couples.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/banka.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/banka.jpg'),
       },
       {
         name: "Łukasz and Agnieszka Czechyra",
         title: "",
         bio: "They met at university and have been together ever since. They have five children, whom they homeschool. They are actively involved in Church life and in ministry to married couples. They lead various courses and always preach together as a couple.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/czechyra.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/czechyra.jpg'),
       },
       {
         name: "Fr. Renzo Bonetti",
         title: "",
         bio: "Sacerdote di Verona, ordinato in Italia nel 1968. Ha svolto il ruolo di rettore del seminario. È co-fondatore del progetto Misterogrande, dove annuncia la bellezza di questo sacramento. Crede nella vocazione alla santità delle coppie sposate e nella loro dignità sacramentale.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/bonetti.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/bonetti.jpg'),
       },
       {
         name: "Robert Cheaib",
         title: "",
         bio: "He is a husband, father, and professor of dogmatic theology in France. Author of several books on faith, prayer, and family, he is also a member of the Vatican Dicastery for the Laity, Family and Life. He runs a blog on living the Christian faith in everyday life.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/cheaib.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/cheaib.jpg'),
       },
       {
         name: "Fr. Przemysław Kwiatkowski",
         title: "",
         bio: "A priest of the Archdiocese of Gniezno, with many years of experience in pastoral ministry and teaching. Former rector of the Gniezno seminary. Involved with the Misterogrande project in Poland from the very beginning. He currently serves as a consultant to the Council for the Family.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/kwiatkowski.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/kwiatkowski.jpg'),
       },
       {
         name: "Tommaso Lodi and Giulia Cavicchi",
         title: "",
         bio: "They live in the Emilia-Romagna region and are a married couple involved in evangelisation. Giulia is a psychologist, while Tommaso is finishing his theology studies and works as a catechist. Their mission was born out of the Misterogrande retreats and the theology of the body of John Paul II.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/lodi.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/lodi.jpg'),
       },
     ],
     it: [
@@ -476,37 +477,37 @@ const getSpeakers2024ForLanguage = (language: Language): Speaker[] => {
         name: "Aleksander e Monika Bańka",
         title: "",
         bio: "Sono sposati da vent’anni e hanno due figli. Si sono conosciuti durante un ritiro spirituale e sono ancora membri attivi di quella comunità. Aleksander è un filosofo e guida della comunità Famiglia di San Charbel. Monika è una terapeuta che lavora con famiglie e coppie.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/banka.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/banka.jpg'),
       },
       {
         name: "Łukasz e Agnieszka Czechyra",
         title: "",
         bio: "Si sono conosciuti all’università e da allora camminano insieme. Hanno cinque figli, che educano in casa. Sono attivamente coinvolti nella vita della Chiesa e nel servizio alle coppie sposate. Tengono diversi corsi e annunciano sempre insieme, come coppia.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/czechyra.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/czechyra.jpg'),
       },
       {
         name: "Don Renzo Bonetti",
         title: "",
         bio: "Sacerdote di Verona, ordinato nel 1968 in Italia. Ha lavorato come direttore e rettore del seminario. È attivo nel progetto Misterogrande e predica sul matrimonio. Crede nella santità dei coniugi e nella loro dignità sacramentale.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/bonetti.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/bonetti.jpg'),
       },
       {
         name: "Robert Cheaib",
         title: "",
         bio: "È marito, padre e professore di teologia dogmatica in Francia. Autore di diversi libri sulla fede, la preghiera e la famiglia, è anche membro del Dicastero vaticano per i Laici, la Famiglia e la Vita. Gestisce un blog sulla vita cristiana nella quotidianità.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/cheaib.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/cheaib.jpg'),
       },
       {
         name: "Don Przemysław Kwiatkowski",
         title: "",
         bio: "Sacerdote dell’Arcidiocesi di Gniezno, con una lunga esperienza nella pastorale e nell’insegnamento. È stato rettore del seminario di Gniezno e fin dall’inizio è coinvolto nel progetto Misterogrande in Polonia. Attualmente è consultore del Consiglio per la Famiglia.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/kwiatkowski.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/kwiatkowski.jpg'),
       },
       {
         name: "Tommaso Lodi e Giulia Cavicchi",
         title: "",
         bio: "Vivono in Emilia-Romagna e sono una coppia sposata impegnata nell’evangelizzazione. Giulia è psicologa, mentre Tommaso sta terminando gli studi di teologia e lavora come catechista. La loro missione è nata dai ritiri Misterogrande e dalla teologia del corpo di Giovanni Paolo II.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/lodi.jpg@jpg",
+        image: imgproxyHelpers.fit(400, 300, 'speakers/lodi.jpg'),
       },
     ]
   };
@@ -521,37 +522,37 @@ const getSpeakers2025ForLanguage = (language: Language): Speaker[] => {
         name: "ks. prof. Luca Pedroli",
         title: "",
         bio: "Prezbiter diecezji Vigevano i ojciec duchowny kolegium papieskiego w Rzymie. Profesor Papieskiego Instytutu Biblijnego, gdzie wykłada grekę biblijną i pisma św. Jana. Uczy także teologii sakramentu małżeństwa w Papieskim Instytucie Studiów nad Małżeństwem i Rodziną im. Jana Pawła II przy Papieskim Uniwersytecie Laterańskim w Rzymie. Autor licznych publikacji z zakresu antropologii biblijnej.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/luca_pedroli.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/luca_pedroli.jpg')
       },
       {
         name: "dr Marco i Romina Manali",
         title: "",
         bio: "Małżeństwo z 22-letnim stażem, rodzice dwóch dorosłych córek, prowadzą działalność formacyjną w projekcie Misterogrande. Marco ma tytuł doktora teologii, Romina zajmuje się pracą z dziećmi i młodzieżą. Ich doświadczenie łączy teorię z praktyką w służbie małżeństwu i rodzinie.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/marco_romina.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/marco_romina.jpg')
       },
       {
         name: "ks. dr Grzegorz Strzelczyk",
         title: "",
         bio: "Duszpasterz, wykładowca i autor książek o małżeństwie. Kapłan diecezji katowickiej od 25 lat. Doktor teologii moralnej, autor popularnych książek religijnych. Od 2023 roku odpowiada za formację stałą księży Archidiecezji Katowickiej.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/grzegorz_strzelczyk.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/grzegorz_strzelczyk.jpg')
       },
       {
         name: "Piotr i Iwona Wołkow",
         title: "",
         bio: "Małżonkowie od ponad 25 lat, rodzice adoptowanych dzieci - Franka i Niny. Zaangażowani w kursy dla narzeczonych, życie parafialne, Wspólnotę „Woda Życia” i Projekt Misterogrande. Pokazują, że codzienne trudności nie przeszkadzają w dzieleniu się łaskami płynącymi z sakramentu małżeństwa.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/wolkow.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/wolkow.jpg')
       },
       {
         name: "ks. Marcin Kąkol",
         title: "",
         bio: "Prezbiter Archidiecezji Gnieźnieńskiej, od samego początku zaangażowany w pracę z małżeństwami. Zetknął się z sakramentem małżeństwa jeszcze będąc w formacji seminaryjnej. Od wielu lat angażuje się w pracę z małżeństwami w parafiach, gdzie posługuje i w Projekcie Misterogrande.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/marcin_kakol.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/marcin_kakol.jpg')
       },
       {
         name: "Dominik i Monika Radziszowscy",
         title: "",
         bio: "Małżonkowie od 25 lat, rodzice piątki dzieci, formują się w Domowym Kościele. Jako małżonkowie głęboko czerpią z sakramentu małżeństwa. Prowadzą warsztaty, szkolenia i rekolekcje o komunikacji, bożych finansach i wychowaniu dzieci.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/dominik_monika.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/dominik_monika.jpg')
       }
     ],
     en: [
@@ -559,37 +560,37 @@ const getSpeakers2025ForLanguage = (language: Language): Speaker[] => {
         name: "Fr. Prof. Luca Pedroli",
         title: "",
         bio: "A presbyter of the Diocese of Vigevano and spiritual director at a pontifical college in Rome. Professor at the Pontifical Biblical Institute, where he teaches Biblical Greek and the writings of St John. He also teaches the theology of the sacrament of marriage at the Pontifical John Paul II Institute for Studies on Marriage and Family at the Pontifical Lateran University in Rome. Author of numerous publications in the field of biblical anthropology.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/luca_pedroli.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/luca_pedroli.jpg')
       },
       {
         name: "Dr. Marco and Romina Manali",
         title: "",
         bio: "Married for 22 years and parents of two adult daughters, they are actively involved in formation work within the Misterogrande project. Marco holds a PhD in theology, while Romina works with children and young people. Their experience blends theory and practice in service of marriage and family life.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/marco_romina.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/marco_romina.jpg')
       },
       {
         name: "Fr. Dr. Grzegorz Strzelczyk",
         title: "",
         bio: "Pastor, lecturer, and author of books on marriage. A priest of the Diocese of Katowice for 25 years. He holds a doctorate in moral theology and is the author of popular religious books. Since 2023, he has been responsible for the ongoing formation of priests in the Archdiocese of Katowice.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/grzegorz_strzelczyk.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/grzegorz_strzelczyk.jpg')
       },
       {
         name: "Piotr and Iwona Wołkow",
         title: "",
         bio: "Married for over 25 years, they are adoptive parents of Franek and Nina. They are involved in marriage preparation courses, parish life, the “Water of Life” Community, and the Misterogrande Project. They show that everyday challenges do not prevent them from sharing the graces that flow from the sacrament of marriage.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/wolkow.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/wolkow.jpg')
       },
       {
         name: "Fr. Marcin Kąkol",
         title: "",
         bio: "A presbyter of the Archdiocese of Gniezno, involved in ministry to married couples from the very beginning. He encountered the sacrament of marriage during his seminary formation. For many years, he has been engaged in working with couples in the parishes where he serves and in the Misterogrande Project.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/marcin_kakol.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/marcin_kakol.jpg')
       },
       {
         name: "Dominik and Monika Radziszowscy",
         title: "",
         bio: "Married for 25 years and parents of five children, they are part of the Domestic Church movement. As a couple, they draw deeply from the sacrament of marriage. They lead workshops, training sessions, and retreats on communication, godly finances, and raising children.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/dominik_monika.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/dominik_monika.jpg')
       }
     ],
     it: [
@@ -597,37 +598,37 @@ const getSpeakers2025ForLanguage = (language: Language): Speaker[] => {
         name: "Don Prof. Luca Pedroli",
         title: "",
         bio: "Presbitero della diocesi di Vigevano e padre spirituale in un collegio pontificio a Roma. Professore al Pontificio Istituto Biblico, dove insegna greco biblico e gli scritti di San Giovanni. Insegna anche teologia del sacramento del matrimonio presso il Pontificio Istituto Giovanni Paolo II per Studi su Matrimonio e Famiglia, affiliato alla Pontificia Università Lateranense di Roma. Autore di numerose pubblicazioni nel campo dell’antropologia biblica.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/luca_pedroli.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/luca_pedroli.jpg')
       },
       {
         name: "Dott. Marco e Romina Manali",
         title: "",
         bio: "Sposi da 22 anni e genitori di due figlie adulte, svolgono un’attività formativa all’interno del progetto Misterogrande. Marco è dottore in teologia, mentre Romina lavora con bambini e adolescenti. La loro esperienza unisce teoria e pratica al servizio del matrimonio e della famiglia.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/marco_romina.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/marco_romina.jpg')
       },
       {
         name: "Don Dott. Grzegorz Strzelczyk",
         title: "",
         bio: "Pastore, docente e autore di libri sul matrimonio. Sacerdote della diocesi di Katowice da 25 anni. Dottore in teologia morale e autore di popolari libri religiosi. Dal 2023 è responsabile della formazione permanente dei sacerdoti dell’Arcidiocesi di Katowice.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/grzegorz_strzelczyk.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/grzegorz_strzelczyk.jpg')
       },
       {
         name: "Piotr e Iwona Wołkow",
         title: "",
         bio: "Sposi da oltre 25 anni e genitori adottivi di Franek e Nina. Sono impegnati nei corsi per fidanzati, nella vita parrocchiale, nella Comunità “Acqua della Vita” e nel Progetto Misterogrande. Testimoniano che le difficoltà quotidiane non impediscono di condividere le grazie che scaturiscono dal sacramento del matrimonio.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/wolkow.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/wolkow.jpg')
       },
       {
         name: "Don Marcin Kąkol",
         title: "",
         bio: "Presbitero dell’Arcidiocesi di Gniezno, impegnato fin dall’inizio nel lavoro con le coppie sposate. Ha incontrato il sacramento del matrimonio già durante la formazione in seminario. Da molti anni è attivamente coinvolto nella pastorale familiare nelle parrocchie in cui presta servizio e nel Progetto Misterogrande.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/marcin_kakol.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/marcin_kakol.jpg')
       },
       {
         name: "Dominik e Monika Radziszowscy",
         title: "",
         bio: "Sposi da 25 anni e genitori di cinque figli, si formano nel movimento 'Chiesa Domestica'. Come coppia, attingono profondamente al sacramento del matrimonio. Conducono workshop, formazioni e ritiri su temi come la comunicazione, le finanze secondo Dio e l’educazione dei figli.",
-        image: "https://photo.misterogrande.pl/unsafe/rs:fit:400:300/plain/local:///speakers/dominik_monika.jpg@jpg"
+        image: imgproxyHelpers.fit(400, 300, 'speakers/dominik_monika.jpg')
       }
     ]
   };
@@ -637,30 +638,30 @@ const getSpeakers2025ForLanguage = (language: Language): Speaker[] => {
 
 // Photo arrays for 2024 congress
 const day1Photos2024 = [
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/651.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/652.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/653.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/654.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/655.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/656.jpg@jpg"
+  imgproxyHelpers.fit(800, 600, '2024/651.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/652.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/653.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/654.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/655.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/656.jpg')
 ];
 
 const day2Photos2024 = [
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/657.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/658.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/659.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/660.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/661.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/662.jpg@jpg"
+  imgproxyHelpers.fit(800, 600, '2024/657.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/658.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/659.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/660.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/661.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/662.jpg')
 ];
 
 const day3Photos2024 = [
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/663.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/664.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/665.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/666.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/667.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2024/668.jpg@jpg"
+  imgproxyHelpers.fit(800, 600, '2024/663.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/664.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/665.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/666.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/667.jpg'),
+  imgproxyHelpers.fit(800, 600, '2024/668.jpg')
 ];
 
 // Conference data with translations
@@ -859,30 +860,30 @@ const getDailyProgram2024ForLanguage = (language: Language, t: (key: string) => 
 
 // Photo arrays for 2025 congress
 const day1Photos2025 = [
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/401.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/402.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/403.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/404.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/405.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/406.jpg@jpg"
+  imgproxyHelpers.fit(800, 600, '2025/401.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/402.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/403.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/404.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/405.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/406.jpg')
 ];
 
 const day2Photos2025 = [
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/407.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/408.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/409.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/410.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/411.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/412.jpg@jpg"
+  imgproxyHelpers.fit(800, 600, '2025/407.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/408.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/409.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/410.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/411.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/412.jpg')
 ];
 
 const day3Photos2025 = [
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/413.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/414.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/415.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/416.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/417.jpg@jpg",
-  "https://photo.misterogrande.pl/unsafe/rs:fit:800:600/plain/local:///2025/418.jpg@jpg"
+  imgproxyHelpers.fit(800, 600, '2025/413.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/414.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/415.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/416.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/417.jpg'),
+  imgproxyHelpers.fit(800, 600, '2025/418.jpg')
 ];
 
 const getDailyProgram2025ForLanguage = (language: Language, t: (key: string) => string): DayProgram[] => {

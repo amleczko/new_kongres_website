@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { imgproxyHelpers } from "../../lib/imgproxy";
 
 interface BackgroundContainerProps {
   children: React.ReactNode;
@@ -60,7 +61,7 @@ export function BackgroundContainer({ children }: BackgroundContainerProps) {
           showVideo ? 'opacity-0' : 'opacity-100'
         }`}
         style={{
-          backgroundImage: `url('https://photo.misterogrande.pl/unsafe/rs:fit:1920:1080/plain/local:///2025/275.jpg@jpg')`,
+          backgroundImage: `url('${imgproxyHelpers.fit(1920, 1080, '2025/275.jpg')}')`,
           zIndex: 1,
         }}
       />
