@@ -4,8 +4,29 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "III Międzynarodowy Kongres \"Odkryj małżeństwo\"",
-  description: "1-3 maja 2026, Gniezno. Razem odkrywamy piękno sakramentu małżeństwa: konferencje, świadectwa, modlitwa — a między nimi przerwy na rozmowę przy dobrej kawie.",
+  title: "„Odkryj małżeństwo\" - III Międzynarodowy Kongres Projektu Misterogrande, 1-3 maja 2026, Gniezno",
+  description: "Majówka z Misterogrande to świetny sposób na długi weekend majowy dla całej rodziny. Coś dla ducha i coś dla ciała.",
+  keywords: "Misterogrande, małżeństwo, sakrament, kongres, Gniezno, 2026",
+  authors: [{ name: "Fundacja Misterogrande" }],
+  icons: {
+    icon: "/img/favicon.ico",
+    apple: "/img/favicon.ico",
+  },
+  openGraph: {
+    title: "„Odkryj małżeństwo\" - III Międzynarodowy Kongres Projektu Misterogrande, 1-3 maja 2026, Gniezno",
+    siteName: "„Odkryj małżeństwo\" - III Międzynarodowy Kongres Projektu Misterogrande, 1-3 maja 2026, Gniezno",
+    url: "https://kongres.misterogrande.pl",
+    description: "Majówka z Misterogrande to świetny sposób na długi weekend majowy dla całej rodziny. Coś dla ducha i coś dla ciała.",
+    type: "website",
+    images: [
+      {
+        url: "https://kongres.misterogrande.pl/img/social.png",
+        width: 1200,
+        height: 630,
+        alt: "„Odkryj małżeństwo\" - III Międzynarodowy Kongres Projektu Misterogrande, 1-3 maja 2026, Gniezno",
+      }
+    ],
+  },
 };
 
 export default function RootLayout({
