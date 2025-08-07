@@ -98,7 +98,27 @@ export function Footer() {
         
         {/* Bottom section */}
         <div className="mt-12 pt-8 text-center text-brand-gray">
-          <p>&copy; {t('footer.organizer-name')} {new Date().getFullYear()}</p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p>&copy; {t('footer.organizer-name')} {new Date().getFullYear()}</p>
+            <div className="flex flex-col sm:flex-row gap-4 text-sm">
+              <a
+                href="https://misterogrande.pl/fundacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-yellow hover:text-brand-yellow transition-colors"
+              >
+                {t('footer.about-foundation')}
+              </a>
+              <a
+                href="https://misterogrande.pl/kongres/regulamin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-yellow hover:text-brand-yellow transition-colors"
+              >
+                {t('footer.regulations')}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

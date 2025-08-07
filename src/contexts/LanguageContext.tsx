@@ -97,6 +97,7 @@ export function LanguageProvider({ children, language }: LanguageProviderProps) 
 const translations = {
   pl: {
     // Navigation
+    'nav.about-misterogrande': 'O Misterogrande',
     'nav.previous-editions': 'Poprzednie edycje',
     'nav.year-2024': 'rok 2024',
     'nav.year-2025': 'rok 2025',
@@ -160,6 +161,8 @@ const translations = {
     'footer.phone': '+48 123 456 789',
     'footer.media-accreditation': 'Akredytacje dla mediów',
     'footer.media-text': 'Media i dziennikarzy, którzy chcieliby otrzymać akredytację na Kongres prosimy o kontakt mailowy',
+    'footer.about-foundation': 'O Fundacji',
+    'footer.regulations': 'Regulamin',
 
     // Congress pages common
     'congress.back-to-home': 'Powrót do strony głównej',
@@ -196,6 +199,7 @@ const translations = {
 
   en: {
     // Navigation
+    'nav.about-misterogrande': 'About Misterogrande',
     'nav.previous-editions': 'Previous events',
     'nav.year-2024': '2024',
     'nav.year-2025': '2025',
@@ -259,6 +263,8 @@ const translations = {
     'footer.phone': '+48 123 456 789',
     'footer.media-accreditation': 'Media accreditation',
     'footer.media-text': 'Media and journalists who would like to receive accreditation for the Congress are asked to contact us by email',
+    'footer.about-foundation': 'About Foundation',
+    'footer.regulations': 'Terms & Conditions',
 
     // Congress pages common
     'congress.back-to-home': 'Back to homepage',
@@ -295,6 +301,7 @@ const translations = {
 
   it: {
     // Navigation
+    'nav.about-misterogrande': 'Chi Siamo',
     'nav.previous-editions': 'Edizioni precedenti',
     'nav.year-2024': '2024',
     'nav.year-2025': '2025',
@@ -358,6 +365,8 @@ const translations = {
     'footer.phone': '+48 123 456 789',
     'footer.media-accreditation': 'Accreditamento media',
     'footer.media-text': 'I media e i giornalisti che desiderano ottenere l\'accreditamento per il Congresso sono pregati di contattarci via email',
+    'footer.about-foundation': 'Sulla Fondazione',
+    'footer.regulations': 'Regolamento',
 
     // Congress pages common
     'congress.back-to-home': 'Torna alla homepage',

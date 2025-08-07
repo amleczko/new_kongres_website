@@ -116,6 +116,14 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
 
           {/* Navigation menu */}
           <nav className="hidden md:flex items-center space-x-2">
+            <a
+              href="https://misterogrande.pl/o-nas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${textColorClass} ${hoverColorClass} transition-all duration-300 px-3 py-2 rounded-md`}
+            >
+              {t('nav.about-misterogrande')}
+            </a>
             {showPreviousEditions && (
               <DropdownMenu>
                 <DropdownMenuTrigger 
@@ -168,6 +176,17 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
                   </SheetDescription>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 mt-8 px-2">
+                  <div className="py-3 px-1 border-b border-border">
+                    <a
+                      href="https://misterogrande.pl/o-nas"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {t('nav.about-misterogrande')}
+                    </a>
+                  </div>
                   {showPreviousEditions && (
                     <div className="py-3 px-1 border-b border-border">
                       <div className="text-lg font-medium mb-3">{t('nav.previous-editions')}</div>
