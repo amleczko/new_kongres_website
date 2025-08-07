@@ -22,6 +22,8 @@ export interface DayProgram {
   day: string;
   photos: string[];
   conferences: Conference[];
+  dayIndex?: number; // For infinite scroll
+  year?: number; // For infinite scroll
 }
 
 export interface LanguageContextType {
@@ -173,6 +175,8 @@ const translations = {
     'congress.materials': 'Materiały z konferencji',
     'congress.photo-alt': 'Zdjęcie z {day} - {index}',
     'congress.close': 'Zamknij',
+    'congress.load-more': 'Załaduj więcej ({remaining} pozostało)',
+    'congress.photos': 'zdjęć',
 
     // Congress 2024
     'congress.2024.title': 'I Międzynarodowy Kongres',
@@ -275,6 +279,8 @@ const translations = {
     'congress.materials': 'Conference materials',
     'congress.photo-alt': 'Photo from {day} - {index}',
     'congress.close': 'Close',
+    'congress.load-more': 'Load more ({remaining} remaining)',
+    'congress.photos': 'photos',
 
     // Congress 2024
     'congress.2024.title': '1st International Congress',
@@ -377,6 +383,8 @@ const translations = {
     'congress.materials': 'Materiali della conferenza',
     'congress.photo-alt': 'Foto da {day} - {index}',
     'congress.close': 'Chiudi',
+    'congress.load-more': 'Carica di più ({remaining} rimanenti)',
+    'congress.photos': 'foto',
 
     // Congress 2024
     'congress.2024.title': '1° Convegno Internazionale ',
@@ -645,33 +653,54 @@ const getSpeakers2025ForLanguage = (language: Language): Speaker[] => {
   return speakerData[language] || speakerData.pl;
 };
 
-// Photo arrays for 2024 congress
-const day1Photos2024 = [
-  imgproxyHelpers.fit(800, 600, '2024/651.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/652.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/653.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/654.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/655.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/656.jpg')
-];
+// Photo ranges configuration for infinite scroll
+const photoRanges = {
+  2024: {
+    day1: { start: 1, end: 200 }, // ~50 photos available
+    day2: { start: 201, end: 400 }, // ~64 photos available  
+    day3: { start: 401, end: 500 }  // ~88 photos available
+  },
+  2025: {
+    day1: { start: 1, end: 200 }, // ~50 photos available
+    day2: { start: 201, end: 400 }, // ~64 photos available
+    day3: { start: 401, end: 500 }  // ~88 photos available
+  }
+}
 
-const day2Photos2024 = [
-  imgproxyHelpers.fit(800, 600, '2024/657.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/658.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/659.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/660.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/661.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/662.jpg')
-];
+// Function to get photos for a specific range
+export function getPhotosForDay(year: number, dayIndex: number, startIndex: number = 0, count: number = 6): string[] {
+  const dayKeys = ['day1', 'day2', 'day3']
+  const dayKey = dayKeys[dayIndex] as keyof typeof photoRanges[2024]
+  const range = photoRanges[year as keyof typeof photoRanges]?.[dayKey]
+  
+  if (!range) return []
+  
+  const photos: string[] = []
+  const maxPhotos = range.end - range.start + 1
+  const actualCount = Math.min(count, maxPhotos - startIndex)
+  
+  for (let i = 0; i < actualCount; i++) {
+    const photoId = range.start + startIndex + i
+    photos.push(imgproxyHelpers.fit(800, 600, `${year}/${photoId}.jpg`))
+  }
+  
+  return photos
+}
 
-const day3Photos2024 = [
-  imgproxyHelpers.fit(800, 600, '2024/663.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/664.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/665.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/666.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/667.jpg'),
-  imgproxyHelpers.fit(800, 600, '2024/668.jpg')
-];
+// Function to get total available photos for a day
+export function getTotalPhotosForDay(year: number, dayIndex: number): number {
+  const dayKeys = ['day1', 'day2', 'day3']
+  const dayKey = dayKeys[dayIndex] as keyof typeof photoRanges[2024]
+  const range = photoRanges[year as keyof typeof photoRanges]?.[dayKey]
+  
+  if (!range) return 0
+  return range.end - range.start + 1
+}
+
+// Legacy arrays for initial load (first 6 photos)
+const day1Photos2024 = getPhotosForDay(2024, 0, 0, 6)
+const day2Photos2024 = getPhotosForDay(2024, 1, 0, 6)
+const day3Photos2024 = getPhotosForDay(2024, 2, 0, 6)
 
 // Conference data with translations
 const getDailyProgram2024ForLanguage = (language: Language, t: (key: string) => string): DayProgram[] => {
@@ -852,48 +881,31 @@ const getDailyProgram2024ForLanguage = (language: Language, t: (key: string) => 
     {
       day: t('congress.2024.day1'),
       photos: day1Photos2024,
-      conferences: conferences[0].conferences
+      conferences: conferences[0].conferences,
+      dayIndex: 0,
+      year: 2024
     },
     {
       day: t('congress.2024.day2'),
       photos: day2Photos2024,
-      conferences: conferences[1].conferences
+      conferences: conferences[1].conferences,
+      dayIndex: 1,
+      year: 2024
     },
     {
       day: t('congress.2024.day3'),
       photos: day3Photos2024,
-      conferences: conferences[2].conferences
+      conferences: conferences[2].conferences,
+      dayIndex: 2,
+      year: 2024
     }
   ];
 };
 
-// Photo arrays for 2025 congress
-const day1Photos2025 = [
-  imgproxyHelpers.fit(800, 600, '2025/401.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/402.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/403.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/404.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/405.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/406.jpg')
-];
-
-const day2Photos2025 = [
-  imgproxyHelpers.fit(800, 600, '2025/407.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/408.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/409.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/410.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/411.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/412.jpg')
-];
-
-const day3Photos2025 = [
-  imgproxyHelpers.fit(800, 600, '2025/413.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/414.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/415.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/416.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/417.jpg'),
-  imgproxyHelpers.fit(800, 600, '2025/418.jpg')
-];
+// Legacy arrays for 2025 initial load (first 6 photos)
+const day1Photos2025 = getPhotosForDay(2025, 0, 0, 6)
+const day2Photos2025 = getPhotosForDay(2025, 1, 0, 6)
+const day3Photos2025 = getPhotosForDay(2025, 2, 0, 6)
 
 const getDailyProgram2025ForLanguage = (language: Language, t: (key: string) => string): DayProgram[] => {
   const conferenceData = {
@@ -1115,17 +1127,23 @@ const getDailyProgram2025ForLanguage = (language: Language, t: (key: string) => 
     {
       day: t('congress.2025.day1'),
       photos: day1Photos2025,
-      conferences: conferences[0].conferences
+      conferences: conferences[0].conferences,
+      dayIndex: 0,
+      year: 2025
     },
     {
       day: t('congress.2025.day2'),
       photos: day2Photos2025,
-      conferences: conferences[1].conferences
+      conferences: conferences[1].conferences,
+      dayIndex: 1,
+      year: 2025
     },
     {
       day: t('congress.2025.day3'),
       photos: day3Photos2025,
-      conferences: conferences[2].conferences
+      conferences: conferences[2].conferences,
+      dayIndex: 2,
+      year: 2025
     }
   ];
 };

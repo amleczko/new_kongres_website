@@ -16,13 +16,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Card, CardContent } from "./ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
+import { PhotoCarousel } from "./PhotoCarousel";
 import { useLanguage } from "../contexts/LanguageContext";
 
 interface YouTubePlayerProps {
@@ -282,29 +276,13 @@ export function Congress2024() {
                       {day.day}
                     </h3>
 
-                    {/* Photo Gallery for this day */}
-                    <div className="mb-8">
-                      <Carousel className="w-full max-w-4xl mx-auto">
-                        <CarouselContent>
-                          {day.photos.map((photo, index) => (
-                            <CarouselItem
-                              key={index}
-                              className="md:basis-1/2 lg:basis-1/3"
-                            >
-                              <div className="p-1">
-                                <ImageWithFallback
-                                  src={photo}
-                                  alt={t('congress.photo-alt', { day: day.day, index: index + 1 })}
-                                  className="w-full h-64 object-cover rounded-lg"
-                                />
-                              </div>
-                            </CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                      </Carousel>
-                    </div>
+                    {/* Photo Gallery for this day with infinite scroll */}
+                    <PhotoCarousel
+                      year={day.year || 2024}
+                      dayIndex={day.dayIndex || dayIndex}
+                      dayName={day.day}
+                      initialPhotos={day.photos}
+                    />
 
                     <div className={`grid grid-cols-1 gap-8 ${
                       day.conferences.length === 1 

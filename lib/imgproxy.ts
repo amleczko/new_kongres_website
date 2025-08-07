@@ -27,6 +27,7 @@ export function generateImgproxyUrl(
   
   // Server-side signing with Node.js crypto
   if (typeof window === 'undefined') {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { createHmac } = require('crypto')
     
     const keyBinary = Buffer.from(IMGPROXY_KEY, 'hex')
