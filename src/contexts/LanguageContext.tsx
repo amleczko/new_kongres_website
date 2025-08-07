@@ -105,6 +105,10 @@ const translations = {
     'nav.year-2025': 'rok 2025',
     'nav.menu': 'Menu',
     'nav.mobile-description': 'Nawigacja mobilna strony kongres.misterogrande.pl',
+    'nav.back-to-home': 'Powrót do strony głównej',
+    'nav.scroll-to-top': 'Przewiń do góry',
+    'nav.open-mobile-menu': 'Otwórz menu mobilne',
+    'nav.go-to': 'Przejdź do',
 
     // Logo
     'logo.title': 'III Międzynarodowy Kongres',
@@ -209,6 +213,10 @@ const translations = {
     'nav.year-2025': '2025',
     'nav.menu': 'Menu',
     'nav.mobile-description': 'Mobile navigation for kongres.misterogrande.pl',
+    'nav.back-to-home': 'Back to homepage',
+    'nav.scroll-to-top': 'Scroll to top',
+    'nav.open-mobile-menu': 'Open mobile menu',
+    'nav.go-to': 'Go to',
 
     // Logo
     'logo.title': '3rd International Congress',
@@ -313,6 +321,10 @@ const translations = {
     'nav.year-2025': '2025',
     'nav.menu': 'Menu',
     'nav.mobile-description': 'Navigazione mobile per kongres.misterogrande.pl',
+    'nav.back-to-home': 'Torna alla homepage',
+    'nav.scroll-to-top': 'Scorri in alto',
+    'nav.open-mobile-menu': 'Apri menu mobile',
+    'nav.go-to': 'Vai a',
 
     // Logo
     'logo.title': '3° Convegno Internazionale',

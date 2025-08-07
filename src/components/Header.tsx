@@ -110,6 +110,7 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
           <button 
             onClick={handleLogoClick}
             className={`transition-colors duration-300 ${textColorClass} cursor-pointer focus:outline-none`}
+            aria-label={isSubpage ? t('nav.back-to-home') : t('nav.scroll-to-top')}
           >
             <Logo />
           </button>
@@ -164,6 +165,7 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
                   variant="ghost" 
                   size="icon"
                   className={`p-2 transition-colors duration-300 ${textColorClass} hover:bg-white/10`}
+                  aria-label={t('nav.open-mobile-menu')}
                 >
                   <Menu className="w-6 h-6" />
                 </Button>
@@ -194,12 +196,14 @@ export function Header({ showPreviousEditions = false }: HeaderProps) {
                         <button
                           onClick={() => handleMobileNavClick(currentLanguage === 'pl' ? '/2024' : `/${currentLanguage}/2024`)}
                           className="text-left text-base py-2 px-1 hover:text-primary transition-colors"
+                          aria-label={`${t('nav.go-to')} ${t('nav.year-2024')}`}
                         >
                           {t('nav.year-2024')}
                         </button>
                         <button
                           onClick={() => handleMobileNavClick(currentLanguage === 'pl' ? '/2025' : `/${currentLanguage}/2025`)}
                           className="text-left text-base py-2 px-1 hover:text-primary transition-colors"
+                          aria-label={`${t('nav.go-to')} ${t('nav.year-2025')}`}
                         >
                           {t('nav.year-2025')}
                         </button>

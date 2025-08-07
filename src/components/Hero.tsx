@@ -44,6 +44,7 @@ export function Hero() {
     iframe.style.transition = 'opacity 2s ease-in-out';
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     iframe.setAttribute('allowfullscreen', '');
+    iframe.title = 'Video tło - Kongres Misterogrande';
 
     // Wait for video to be ready before showing
     iframe.onload = () => {
