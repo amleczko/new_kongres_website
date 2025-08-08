@@ -144,7 +144,7 @@ export function Congress2024() {
         {/* Hero Section */}
         <section className="relative text-white py-24 lg:py-32">
           <ImageWithFallback
-            src={imgproxyHelpers.fit(1920, 1080, '2024/662.jpg')}
+            src={imgproxyHelpers.fit(1920, 1080, '2024/629.jpg')}
             alt="Kongres małżeński 2024 - sala konferencyjna"
             className="absolute inset-0 w-full h-full object-cover"
           />

@@ -56,7 +56,7 @@ export function AboutCongress() {
               <div className="bg-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="aspect-video relative overflow-hidden">
                   <ImageWithFallback
-                    src={imgproxyHelpers.fit(800, 450, '2024/662.jpg')}
+                    src={imgproxyHelpers.fit(800, 450, '2024/629.jpg')}
                     alt="Kongres małżeński 2024 - sala konferencyjna"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
@@ -112,7 +112,7 @@ export function AboutCongress() {
               <div className="bg-card border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="aspect-video relative overflow-hidden">
                   <ImageWithFallback
-                    src={imgproxyHelpers.fit(800, 450, '2025/275.jpg')}
+                    src={imgproxyHelpers.fit(800, 450, '2025/268.jpg')}
                     alt="Kongres małżeński 2025 - uczestnicy w rozmowie"
                     className="absolute inset-0 w-full h-full object-cover"
                   />

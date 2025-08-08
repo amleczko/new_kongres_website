@@ -133,7 +133,7 @@ export function Congress2025() {
         {/* Hero Section */}
         <section className="relative text-white py-24 lg:py-32">
           <ImageWithFallback
-            src={imgproxyHelpers.fit(1920, 1080, '2025/275.jpg')}
+            src={imgproxyHelpers.fit(1920, 1080, '2025/268.jpg')}
             alt="Kongres małżeński 2025 - uczestnicy w rozmowie"
             className="absolute inset-0 w-full h-full object-cover"
           />

@@ -101,7 +101,7 @@ export function Hero() {
             showVideo ? 'opacity-0' : 'opacity-100'
           }`}
           style={{
-            backgroundImage: `url('${imgproxyHelpers.fit(1920, 1080, '2025/275.jpg')}')`,
+            backgroundImage: `url('${imgproxyHelpers.fit(1920, 1080, '2025/268.jpg')}')`,
             zIndex: 1,
           }}
         />
