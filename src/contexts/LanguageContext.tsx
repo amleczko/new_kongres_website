@@ -675,7 +675,7 @@ const photoRanges = {
   2025: {
     day1: { start: 1, end: 200 }, // ~50 photos available
     day2: { start: 201, end: 400 }, // ~64 photos available
-    day3: { start: 401, end: 500 }  // ~88 photos available
+    day3: { start: 401, end: 577 }  // ~88 photos available
   }
 }
 
